@@ -1,0 +1,5 @@
+# Go
+export PATH="$PATH:$HOME/go/bin/"
+
+# Dart
+export PATH="$PATH:$HOME$HOME/.pub-cache/bin/"

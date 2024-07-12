@@ -1,0 +1,15 @@
+# Easier navigation
+alias ..="cd .."
+
+# Recursively delete `.DS_Store` files
+alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
+
+# Print each PATH entry on a separate line
+alias path='echo -e ${PATH//:/\\n}'
+
+# IP addresses
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias localip="ipconfig getifaddr en0"
+
+# Flutter
+alias fbr='flutter pub run build_runner build --delete-conflicting-outputs'
