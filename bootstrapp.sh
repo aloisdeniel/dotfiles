@@ -15,8 +15,7 @@ function doIt() {
     -avh --no-perms . ~
 
   # Install all programs
-  source ~/brew.sh
-  go install github.com/a-h/templ/cmd/templ@latest
+  source ~/install.sh
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
