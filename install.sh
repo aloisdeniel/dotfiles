@@ -18,7 +18,7 @@ brew install go
 brew install --cask flutter
 
 # Programs
-brew install --cask iterm2
+brew install --cask wezterm
 brew install --cask raycast
 brew install --cask github
 brew install --cask figma
