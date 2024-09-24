@@ -10,6 +10,7 @@ brew update
 brew upgrade
 
 # Command line
+brew install ripgrep
 brew install neovim
 brew install starship
 
