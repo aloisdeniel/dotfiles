@@ -2,64 +2,56 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
--- Function to start Flutter run task with a prompt for cwd
-local function flutter_run()
-  vim.ui.input({
-    prompt = "Enter project directory for Flutter Run: ",
-    default = vim.fn.getcwd(),
-  }, function(cwd)
-    if cwd then
-      local overseer = require("overseer")
-      local task = overseer.new_task({
-        name = "Flutter Run",
-        cmd = { "flutter" },
-        args = { "run" },
-        cwd = cwd,
-      })
-      task:start()
-      overseer.open()
-    end
-  end)
-end
+-- Flutter commands
+vim.api.nvim_create_user_command("FlutterRun", function(opts)
+  local overseer = require("overseer")
+  local task = overseer.new_task({
+    name = "Flutter Run",
+    cmd = { "flutter" },
+    args = { "run" },
+    cwd = opts.args,
+  })
+  task:start()
+  overseer.open()
+end, { nargs = 1 })
 
--- Function to send a key to flutter task
-local function flutter_input(i)
+vim.api.nvim_create_user_command("FlutterInput", function(opts)
   local tasks = require("overseer").list_tasks()
   for _, task in pairs(tasks) do
     if task and task.name == "Flutter Run" then
-      task:send(i)
+      local chan_id = task.strategy.chan_id
+      vim.api.nvim_chan_send(chan_id, opts.args)
     end
   end
-end
+end, { nargs = 1 })
 
--- Commands
-vim.api.nvim_create_user_command("FlutterRun", function()
-  flutter_run()
-end, {})
-
-vim.api.nvim_create_user_command("FlutterHotReload", function()
-  flutter_input("r")
-end, {})
-
-vim.api.nvim_create_user_command("FlutterHotRestart", function()
-  flutter_input("R")
-end, {})
-
--- Keybindings
-vim.api.nvim_set_keymap("n", "<leader>ofr", ":FlutterRun<CR>", {
-  desc = "Start Flutter run task",
+-- Keymaps
+vim.keymap.set("n", "<leader>off", function()
+  vim.ui.input({ prompt = "In which directory?", default = vim.fn.getcwd() }, function(input)
+    if input then
+      vim.cmd("FlutterRun " .. input)
+    end
+  end)
+end, {
+  desc = "Start the app.",
   noremap = true,
   silent = true,
 })
 
-vim.api.nvim_set_keymap("n", "<leader>ofh", ":FlutterHotReload<CR>", {
-  desc = "Send hot reload 'r' to Flutter task",
+vim.api.nvim_set_keymap("n", "<leader>ofr", ":FlutterInput r<CR>", {
+  desc = "Hot reload. 🔥🔥🔥",
   noremap = true,
   silent = true,
 })
 
-vim.api.nvim_set_keymap("n", "<leader>oft", ":FlutterHotRestart<CR>", {
-  desc = "Send hot reload 'R' to Flutter task",
+vim.api.nvim_set_keymap("n", "<leader>ofR", ":FlutterInput R<CR>", {
+  desc = "Hot restart.",
+  noremap = true,
+  silent = true,
+})
+
+vim.api.nvim_set_keymap("n", "<leader>ofq", ":FlutterInput q<CR>", {
+  desc = "Quit (terminate the application on the device).",
   noremap = true,
   silent = true,
 })
