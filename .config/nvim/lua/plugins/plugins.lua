@@ -36,6 +36,21 @@ return {
     },
   },
   {
+    "nvim-telescope/telescope.nvim",
+    opts = {
+      defaults = {
+        mappings = {
+          n = {
+            ["<c-d>"] = require("telescope.actions").delete_buffer,
+          },
+          i = {
+            ["<c-d>"] = require("telescope.actions").delete_buffer,
+          },
+        },
+      },
+    },
+  },
+  {
     "neovim/nvim-lspconfig",
     event = "LazyFile",
     dependencies = {
