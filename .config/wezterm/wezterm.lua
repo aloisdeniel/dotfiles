@@ -2,11 +2,10 @@ local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
 -- Theme
-config.font = wezterm.font("Fira Code")
+config.font = wezterm.font("JetBrains Mono")
 config.font_size = 18.0
-config.color_scheme = "Catppuccin Mocha"
+config.color_scheme = "tokyonight_night"
 config.window_decorations = "RESIZE"
-config.window_background_opacity = 0.95
 config.window_padding = {
 	left = 0,
 	right = 0,
@@ -49,5 +48,8 @@ wezterm.on("format-tab-title", function(tab)
 		{ Text = tab.tab_index + 1 .. ". " .. title },
 	}
 end)
+
+-- Keybindings
+config.leader = { key = "Home", timeout_milliseconds = 1000 }
 
 return config
