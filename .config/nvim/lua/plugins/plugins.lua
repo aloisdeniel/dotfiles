@@ -2,6 +2,20 @@
 return {
   { "echasnovski/mini.nvim", version = "*" },
   {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "tokyonight-night",
+    },
+  },
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    opts = {
+      window = {
+        position = "float",
+      },
+    },
+  },
+  {
     "nvim-treesitter/nvim-treesitter",
     opts = {
       ensure_installed = {
