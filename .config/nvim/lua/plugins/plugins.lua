@@ -2,6 +2,12 @@
 return {
   { "echasnovski/mini.nvim", version = "*" },
   {
+    "gbprod/yanky.nvim",
+    opts = {
+      highlight = { timer = 150 },
+    },
+  },
+  {
     "LazyVim/LazyVim",
     opts = {
       colorscheme = "tokyonight-night",
@@ -10,6 +16,13 @@ return {
   {
     "nvim-neo-tree/neo-tree.nvim",
     opts = {
+      filesystem = {
+        filtered_items = {
+          visible = true, -- when true, they will just be displayed differently than normal items
+        },
+        bind_to_cwd = false,
+        follow_current_file = { enabled = true },
+      },
       window = {
         position = "float",
       },
