@@ -26,6 +26,7 @@ vim.api.nvim_create_user_command("FlutterInput", function(opts)
 end, { nargs = 1 })
 
 -- Keymaps
+--
 vim.keymap.set("n", "<leader>off", function()
   vim.ui.input({ prompt = "In which directory?", default = vim.fn.getcwd() }, function(input)
     if input then
@@ -55,3 +56,10 @@ vim.api.nvim_set_keymap("n", "<leader>ofq", ":FlutterInput q<CR>", {
   noremap = true,
   silent = true,
 })
+
+vim.keymap.set({ "n", "x" }, "p", "<Plug>(YankyPutAfter)")
+vim.keymap.set({ "n", "x" }, "P", "<Plug>(YankyPutBefore)")
+vim.keymap.set({ "n", "x" }, "gp", "<Plug>(YankyGPutAfter)")
+vim.keymap.set({ "n", "x" }, "gP", "<Plug>(YankyGPutBefore)")
+vim.keymap.set("n", "<c-p>", "<Plug>(YankyPreviousEntry)")
+vim.keymap.set("n", "<c-n>", "<Plug>(YankyNextEntry)")
