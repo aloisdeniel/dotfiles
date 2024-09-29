@@ -12,6 +12,7 @@ brew upgrade
 # Command line
 brew install ripgrep
 brew install neovim
+brew install lazygit
 brew install starship
 
 #SDKs
