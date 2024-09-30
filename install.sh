@@ -26,7 +26,7 @@ brew install --cask github
 brew install --cask figma
 
 # Fonts
-brew install --cask font-caskaydia-cove-nerd-font
+brew install --cask font-jetbrains-mono-nerd-font
 
 # Remove outdated versions from the cellar.
 brew cleanup
