@@ -4,26 +4,34 @@
 
 -- Flutter commands
 vim.api.nvim_create_user_command("FlutterRun", function(opts)
-  local overseer = require("overseer")
-  local task = overseer.new_task({
-    name = "Flutter Run",
-    cmd = { "flutter" },
-    args = { "run" },
-    cwd = opts.args,
-  })
-  task:start()
-  overseer.open()
-end, { nargs = 1 })
+  -- Open a new wezterm pane on the right
+  local command = "wezterm cli split-pane --right --percent 30 --cwd '"
+    .. opts.args
+    .. "' -- bash -c 'flutter run; exec bash'"
 
-vim.api.nvim_create_user_command("FlutterInput", function(opts)
-  local tasks = require("overseer").list_tasks()
-  for _, task in pairs(tasks) do
-    if task and task.name == "Flutter Run" then
-      local chan_id = task.strategy.chan_id
-      vim.api.nvim_chan_send(chan_id, opts.args)
-    end
+  -- Run the command to create the new pane and capture the pane ID
+  local handle = io.popen(command)
+  if handle ~= nil then
+    local result = handle:read("*a")
+    handle:close()
+
+    -- Assuming the pane ID is printed after the pane is created
+    -- Here you would normally extract the pane ID from the command output if necessary.
+    -- In case you need to get pane details use `wezterm cli list --format json`.
+    wezterm_pane_id = result:match("%d+") -- Extract pane ID
   end
 end, { nargs = 1 })
+
+vim.api.nvim_create_user_command("FlutterInput", function(input)
+  if wezterm_pane_id then
+    -- Send input to the stored pane ID
+    local send_command = "wezterm cli send-text --pane-id " .. wezterm_pane_id .. " '" .. input.args .. "'"
+    os.execute(send_command)
+  else
+    print("Error: No WezTerm pane created yet. Run :FlutterRun first.")
+  end
+end, { nargs = 1 })
+
 
 -- Keymaps
 --
