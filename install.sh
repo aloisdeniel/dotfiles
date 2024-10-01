@@ -15,7 +15,8 @@ brew install neovim
 brew install lazygit
 brew install starship
 
-#SDKs
+#SDKs & Runtimes
+brew install node
 brew install go
 brew install --cask flutter
 
