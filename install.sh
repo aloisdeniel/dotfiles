@@ -13,11 +13,11 @@ brew upgrade
 brew install ripgrep
 brew install neovim
 brew install lazygit
-brew install starship
 
 #SDKs & Runtimes
 brew install node
 brew install go
+brew install rustup
 brew install --cask flutter
 
 # Programs
