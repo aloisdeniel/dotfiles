@@ -9,10 +9,11 @@ brew update
 # Upgrade any already-installed formulae.
 brew upgrade
 
-# Command line
+# Command line programs
+brew install fzf
 brew install ripgrep
-brew install neovim
 brew install lazygit
+brew install neovim
 
 #SDKs & Runtimes
 brew install node
