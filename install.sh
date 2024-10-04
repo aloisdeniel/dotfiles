@@ -14,6 +14,7 @@ brew install fzf
 brew install ripgrep
 brew install lazygit
 brew install neovim
+brew install ollama
 
 #SDKs & Runtimes
 brew install node
@@ -35,3 +36,7 @@ brew cleanup
 
 # Go tools
 go install github.com/a-h/templ/cmd/templ@latest
+
+# LLM models
+ollama pull codestral
+ollama pull gemma2:27b
