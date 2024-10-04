@@ -8,6 +8,39 @@ return {
     },
   },
   {
+    "nomnivore/ollama.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    cmd = { "Ollama" },
+    keys = {
+      {
+        "<leader>mm",
+        ":<c-u>lua require('ollama').prompt('Raw')<cr>",
+        desc = "ollama promt",
+        mode = { "n", "v" },
+      },
+      {
+        "<leader>mc",
+        ":<c-u>lua require('ollama').prompt('General')<cr>",
+        desc = "ollama prompt for a general question",
+        mode = { "n", "v" },
+      },
+    },
+
+    opts = {
+      model = "codestral",
+      prompts = {
+        General = {
+          prompt = "$input",
+          input_label = "> ",
+          model = "gemma2:27b",
+          action = "display",
+        },
+      },
+    },
+  },
+  {
     "LazyVim/LazyVim",
     opts = {
       colorscheme = "tokyonight-night",
