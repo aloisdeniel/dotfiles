@@ -36,7 +36,3 @@ brew cleanup
 
 # Go tools
 go install github.com/a-h/templ/cmd/templ@latest
-
-# LLM models
-ollama pull codestral
-ollama pull gemma2:27b
