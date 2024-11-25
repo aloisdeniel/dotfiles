@@ -10,6 +10,7 @@ brew update
 brew upgrade
 
 # Command line programs
+brew install tmux
 brew install fzf
 brew install ripgrep
 brew install lazygit
