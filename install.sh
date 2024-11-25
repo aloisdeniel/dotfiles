@@ -16,6 +16,7 @@ brew install ripgrep
 brew install lazygit
 brew install neovim
 brew install ollama
+brew instal yazi
 
 #SDKs & Runtimes
 brew install node
