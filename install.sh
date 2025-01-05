@@ -25,7 +25,7 @@ brew install rustup
 brew install --cask flutter
 
 # Programs
-brew install --cask wezterm
+brew install --cask ghostty
 brew install --cask raycast
 brew install --cask github
 brew install --cask figma
