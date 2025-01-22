@@ -10,8 +10,8 @@ brew update
 brew upgrade
 
 # Command line programs
-brew install tmux
-brew install fzf
+brew install tmux # Terminal session manager
+brew install fzf # Search
 brew install ripgrep 
 brew install lazygit # Git UI
 brew install neovim # Code editor
@@ -27,9 +27,10 @@ brew install --cask flutter
 
 # Programs
 
+brew install --cask zen-browser # Browser
 brew install --cask ghostty # Terminal
-brew install --cask raycast
-brew install --cask github
+brew install --cask raycast # Commands
+brew install --cask github # Github UI
 brew install --cask figma
 
 # Fonts
