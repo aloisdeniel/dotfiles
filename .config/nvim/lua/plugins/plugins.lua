@@ -26,8 +26,8 @@ return {
         filtered_items = {
           visible = true, -- when true, they will just be displayed differently than normal items
         },
-        bind_to_cwd = false,
-        follow_current_file = { enabled = true },
+        bind_to_cwd = true,
+        follow_current_file = { enabled = false },
       },
       window = {
         position = "float",
