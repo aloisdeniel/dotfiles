@@ -22,6 +22,7 @@ brew instal yazi # File manager
 brew install node
 brew install go
 brew install rustup
+brew install cocoapods # Required by Flutter iOS
 brew install --cask corretto # OpenJDK
 brew install --cask android-studio # Android SDK
 brew install --cask flutter
