@@ -13,6 +13,7 @@ brew upgrade
 brew install tmux # Terminal session manager
 brew install fzf # Search
 brew install ripgrep 
+brew install git
 brew install lazygit # Git UI
 brew install neovim # Code editor
 brew install ollama # Local AI models
@@ -32,7 +33,6 @@ brew install --cask flutter
 brew install --cask zen-browser # Browser
 brew install --cask ghostty # Terminal
 brew install --cask raycast # Commands
-brew install --cask github # Github UI
 brew install --cask figma
 
 # Fonts
