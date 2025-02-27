@@ -23,6 +23,7 @@ brew install node
 brew install go
 brew install rustup
 brew install --cask corretto # OpenJDK
+brew install --cask android-studio # Android SDK
 brew install --cask flutter
 
 # Programs
@@ -35,6 +36,9 @@ brew install --cask figma
 
 # Fonts
 brew install --cask font-jetbrains-mono-nerd-font
+
+# Required by Flutter
+sudo softwareupdate --install-rosetta --agree-to-license
 
 # Remove outdated versions from the cellar.
 brew cleanup
