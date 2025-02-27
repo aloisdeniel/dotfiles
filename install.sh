@@ -16,7 +16,7 @@ brew install ripgrep
 brew install lazygit # Git UI
 brew install neovim # Code editor
 brew install ollama # Local AI models
-brew instal yazi # File manager
+brew instal superfile # File manager
 
 #SDKs & Runtimes
 brew install node
