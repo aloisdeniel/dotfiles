@@ -1,5 +1,7 @@
 -- Based on kickstart.nvim
 
+require("custom.flutter")
+
 -- OPTIONS
 
 vim.g.mapleader = " "
@@ -75,6 +77,32 @@ vim.api.nvim_set_keymap("n", "<leader>rq", ":FlutterInput q<CR>", {
 	noremap = true,
 	silent = true,
 })
+
+vim.keymap.set({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save File" })
+
+vim.keymap.set("v", "<", "<gv", { desc = "Outdent" })
+vim.keymap.set("v", ">", ">gv", { desc = "Indent" })
+
+local diagnostic_goto = function(next, severity)
+	local go = next and vim.diagnostic.goto_next or vim.diagnostic.goto_prev
+	severity = severity and vim.diagnostic.severity[severity] or nil
+	return function()
+		go({ severity = severity })
+	end
+end
+vim.keymap.set("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Line Diagnostics" })
+vim.keymap.set("n", "]d", diagnostic_goto(true), { desc = "Next Diagnostic" })
+vim.keymap.set("n", "[d", diagnostic_goto(false), { desc = "Prev Diagnostic" })
+vim.keymap.set("n", "]e", diagnostic_goto(true, "ERROR"), { desc = "Next Error" })
+vim.keymap.set("n", "[e", diagnostic_goto(false, "ERROR"), { desc = "Prev Error" })
+vim.keymap.set("n", "]w", diagnostic_goto(true, "WARN"), { desc = "Next Warning" })
+vim.keymap.set("n", "[w", diagnostic_goto(false, "WARN"), { desc = "Prev Warning" })
+
+vim.keymap.set("n", "<leader>wd", "<C-W>c", { desc = "Delete Window", remap = true })
+local bufdelete = require("custom.bufdelete")
+vim.keymap.set("n", "<leader>bd", function()
+	bufdelete()
+end, { desc = "Delete Buffer" })
 
 -- COMMANDS
 
