@@ -43,6 +43,8 @@ sudo softwareupdate --install-rosetta --agree-to-license
 
 # Git configuration
 git config --global pull.rebase false
+git config --global user.email "alois.deniel@gmail.com"
+git config --global user.name "Aloïs DENIEL"
 
 # Remove outdated versions from the cellar.
 brew cleanup
