@@ -41,5 +41,8 @@ brew install --cask font-jetbrains-mono-nerd-font
 # Required by Flutter
 sudo softwareupdate --install-rosetta --agree-to-license
 
+# Git configuration
+git config --global pull.rebase false
+
 # Remove outdated versions from the cellar.
 brew cleanup
