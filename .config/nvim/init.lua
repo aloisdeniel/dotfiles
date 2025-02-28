@@ -150,6 +150,8 @@ require("lazy").setup({
 	require("plugins.treesitter"),
 	require("plugins.tokyonight"),
 	require("plugins.conform"),
+	require("plugins.gitconflict"),
+	require("plugins.copilot"),
 }, {
 	ui = {
 		icons = vim.g.have_nerd_font and {} or {
