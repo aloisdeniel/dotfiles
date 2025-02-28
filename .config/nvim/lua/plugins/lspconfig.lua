@@ -201,6 +201,7 @@ return {
 		})
 
 		-- Flutter / Dart
+		local capabilities = require("cmp_nvim_lsp").default_capabilities()
 		require("lspconfig")["dartls"].setup({
 			mason = false,
 			cmd = {
@@ -209,6 +210,7 @@ return {
 				"--protocol=lsp",
 			},
 			filetypes = { "dart" },
+			capabilities = capabilities,
 			init_options = {
 				onlyAnalyzeProjectsWithOpenFiles = false,
 				suggestFromUnimportedLibraries = true,
