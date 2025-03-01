@@ -1,11 +1,12 @@
-# Add `~/bin` to the `$PATH`
+# PATH
 export PATH="$HOME/bin:$PATH";
+export PATH="$PATH:$HOME/go/bin/"
+export PATH="$PATH:$HOME/.pub-cache/bin/"
 
-# Load the shell dotfiles, and then some:
-# * ~/.path can be used to extend `$PATH`.
-# * ~/.extra can be used for other settings you don’t want to commit.
-for file in ~/.{path,bash_prompt,exports,aliases,functions,extra}; do
-	[ -r "$file" ] && [ -f "$file" ] && source "$file";
-done;
-unset file;
+# Exports
+export EDITOR='nvim';
 
+# Aliases
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias localip="ipconfig getifaddr en0"
+alias fbr='flutter pub run build_runner build --delete-conflicting-outputs'
