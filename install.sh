@@ -14,10 +14,11 @@ brew install tmux # Terminal session manager
 brew install fzf # Search
 brew install ripgrep 
 brew install git
+brew install gh # Github
 brew install lazygit # Git UI
 brew install neovim # Code editor
 brew install ollama # Local AI models
-brew instal superfile # File manager
+brew install superfile # File manager
 
 #SDKs & Runtimes
 brew install node
