@@ -10,3 +10,10 @@ export EDITOR='nvim';
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias localip="ipconfig getifaddr en0"
 alias fbr='flutter pub run build_runner build --delete-conflicting-outputs'
+
+# Tmux aliases
+alias tmuxk="tmux kill-session -t" # + <session_name>
+alias tmuxa_flutter="$HOME/.config/tmux/flutter_session.sh" # + <session_name>
+
+# Regular projects
+alias dev_clickup="$HOME/.config/projects/clickup.sh"
