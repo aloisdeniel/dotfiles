@@ -7,6 +7,7 @@ git pull origin main
 function doIt() {
   # Copies all of the files to home directory
   rsync --exclude ".git/" \
+    --exclude ".gitignore" \
     --exclude ".DS_Store" \
     --exclude ".osx" \
     --exclude "bootstrap.sh" \
