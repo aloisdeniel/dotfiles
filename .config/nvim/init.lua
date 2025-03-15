@@ -132,7 +132,7 @@ require("lazy").setup({
 	require("plugins.neotree"),
 	require("plugins.gitsigns"),
 	require("plugins.whichkeys"),
-	require("plugins.telescope"),
+	require("plugins.picker"),
 	{
 		"folke/lazydev.nvim",
 		ft = "lua",
