@@ -41,7 +41,8 @@ return { -- Fuzzy Finder (files, lsp, etc)
 		{
 			"<leader>sc",
 			function()
-				Snacks.picker.files({ cwd = vim.fn.stdpath("config") })
+				local cwd = vim.fn.expand("$HOME/.config")
+				Snacks.picker.files({ cwd = cwd })
 			end,
 			desc = "Find Config File",
 		},
