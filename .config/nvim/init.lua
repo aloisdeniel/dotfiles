@@ -147,6 +147,7 @@ require("lazy").setup({
 	require("plugins.todo"),
 	require("plugins.mini"),
 	require("plugins.snacks"),
+	require("plugins.spectre"),
 	require("plugins.treesitter"),
 	require("plugins.tokyonight"),
 	require("plugins.conform"),

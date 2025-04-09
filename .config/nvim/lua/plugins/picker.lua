@@ -12,9 +12,9 @@ return { -- Fuzzy Finder (files, lsp, etc)
 		{
 			"<leader><space>",
 			function()
-				Snacks.picker.smart()
+				Snacks.picker.buffer()
 			end,
-			desc = "Smart Find Files",
+			desc = "Buffers",
 		},
 		{
 			"<leader>sg",
@@ -41,7 +41,8 @@ return { -- Fuzzy Finder (files, lsp, etc)
 		{
 			"<leader>sc",
 			function()
-				Snacks.picker.files({ cwd = vim.fn.stdpath("config") })
+				local cwd = vim.fn.expand("$HOME/.config")
+				Snacks.picker.files({ cwd = cwd })
 			end,
 			desc = "Find Config File",
 		},
@@ -194,13 +195,6 @@ return { -- Fuzzy Finder (files, lsp, etc)
 				Snacks.picker.qflist()
 			end,
 			desc = "Quickfix List",
-		},
-		{
-			"<leader>sR",
-			function()
-				Snacks.picker.resume()
-			end,
-			desc = "Resume",
 		},
 		{
 			"<leader>su",
