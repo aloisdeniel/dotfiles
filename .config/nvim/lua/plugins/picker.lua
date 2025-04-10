@@ -12,7 +12,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
 		{
 			"<leader><space>",
 			function()
-				Snacks.picker.buffer()
+				Snacks.picker.buffers()
 			end,
 			desc = "Buffers",
 		},
