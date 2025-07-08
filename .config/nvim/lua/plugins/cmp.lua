@@ -11,12 +11,6 @@ return { -- Autocompletion
 				require("copilot_cmp").setup()
 			end,
 		},
-		{
-			"hrsh7th/cmp-vsnip",
-			dependencies = {
-				"hrsh7th/vim-vsnip",
-			},
-		},
 	},
 	config = function()
 		local cmp = require("cmp")
@@ -24,7 +18,7 @@ return { -- Autocompletion
 		cmp.setup({
 			snippet = {
 				expand = function(args)
-					vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+					vim.snippet.expand(args.body)
 				end,
 			},
 			window = {
@@ -44,7 +38,6 @@ return { -- Autocompletion
 			}),
 			sources = {
 				{ name = "copilot", group_index = 2 },
-				{ name = "vsnip" },
 				{
 					name = "lazydev",
 					group_index = 0,
