@@ -29,6 +29,8 @@ brew install --cask corretto # OpenJDK
 brew install --cask android-studio # Android SDK
 brew install --cask flutter
 
+curl -LsSf https://astral.sh/uv/install.sh | sh # Posting : Http client in the terminal
+
 # Programs
 
 brew install --cask zen-browser # Browser
