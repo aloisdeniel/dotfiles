@@ -14,6 +14,7 @@ brew install tmux # Terminal session manager
 brew install fzf # Search
 brew install ripgrep 
 brew install git
+brew install git-delta # Git prettier diff
 brew install gh # Github
 brew install lazygit # Git UI
 brew install neovim # Code editor

@@ -1,0 +1,13 @@
+git:
+  paging:
+    colorArg: always
+    pager: delta --dark --paging=never
+customCommands:
+  - key: "t"
+    command: "git checkout --theirs {{ .SelectedFile.Name }}"
+    context: "files"
+    loadingText: "take theirs"
+  - key: "o"
+    command: "git checkout --ours {{ .SelectedFile.Name }}"
+    context: "files"
+    loadingText: "take ours"
