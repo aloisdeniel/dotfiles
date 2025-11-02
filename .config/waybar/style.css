@@ -19,6 +19,10 @@
   padding: 6px 14px;
 }
 
+.modules-left {
+  padding-left: 4px;
+}
+
 .modules-center {
   padding: 6px 16px;
 }
