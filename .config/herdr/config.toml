@@ -1,0 +1,87 @@
+onboarding = false
+
+[experimental]
+pane_history = false
+
+[theme]
+name = "tokyo-night"
+
+[worktrees]
+directory = "~/.herdr/worktrees"
+
+[keys]
+prefix = "ctrl+j"
+previous_workspace = "prefix+k"
+next_workspace = "prefix+j"
+
+focus_pane_down = "prefix+shift+k"
+focus_pane_up = "prefix+shift+j"
+settings = "prefix+shift+s"
+detach = "prefix+ctrl+q"
+workspace_picker = "prefix+ctrl+w"
+edit_scrollback = "prefix+ctrl+e"
+resize_mode = "prefix+ctrl+r"
+
+[[keys.command]]
+key = "prefix+a"
+type = "shell"
+command = '''
+tab_id="$("$HERDR_BIN_PATH" tab list --workspace "$HERDR_ACTIVE_WORKSPACE_ID" | jq -r '.result.tabs[0].tab_id')"
+[ -n "$tab_id" ] && "$HERDR_BIN_PATH" tab focus "$tab_id"
+'''
+
+[[keys.command]]
+key = "prefix+s"
+type = "shell"
+command = '''
+tab_id="$("$HERDR_BIN_PATH" tab list --workspace "$HERDR_ACTIVE_WORKSPACE_ID" | jq -r '.result.tabs[1].tab_id')"
+[ -n "$tab_id" ] && "$HERDR_BIN_PATH" tab focus "$tab_id"
+'''
+
+[[keys.command]]
+key = "prefix+d"
+type = "shell"
+command = '''
+tab_id="$("$HERDR_BIN_PATH" tab list --workspace "$HERDR_ACTIVE_WORKSPACE_ID" | jq -r '.result.tabs[2].tab_id')"
+[ -n "$tab_id" ] && "$HERDR_BIN_PATH" tab focus "$tab_id"
+'''
+
+[[keys.command]]
+key = "prefix+f"
+type = "shell"
+command = '''
+tab_id="$("$HERDR_BIN_PATH" tab list --workspace "$HERDR_ACTIVE_WORKSPACE_ID" | jq -r '.result.tabs[3].tab_id')"
+[ -n "$tab_id" ] && "$HERDR_BIN_PATH" tab focus "$tab_id"
+'''
+
+[[keys.command]]
+key = "prefix+q"
+type = "shell"
+command = '''
+tab_id="$("$HERDR_BIN_PATH" tab list --workspace "$HERDR_ACTIVE_WORKSPACE_ID" | jq -r '.result.tabs[4].tab_id')"
+[ -n "$tab_id" ] && "$HERDR_BIN_PATH" tab focus "$tab_id"
+'''
+
+[[keys.command]]
+key = "prefix+w"
+type = "shell"
+command = '''
+tab_id="$("$HERDR_BIN_PATH" tab list --workspace "$HERDR_ACTIVE_WORKSPACE_ID" | jq -r '.result.tabs[1].tab_id')"
+[ -n "$tab_id" ] && "$HERDR_BIN_PATH" tab focus "$tab_id"
+'''
+
+[[keys.command]]
+key = "prefix+e"
+type = "shell"
+command = '''
+tab_id="$("$HERDR_BIN_PATH" tab list --workspace "$HERDR_ACTIVE_WORKSPACE_ID" | jq -r '.result.tabs[2].tab_id')"
+[ -n "$tab_id" ] && "$HERDR_BIN_PATH" tab focus "$tab_id"
+'''
+
+[[keys.command]]
+key = "prefix+r"
+type = "shell"
+command = '''
+tab_id="$("$HERDR_BIN_PATH" tab list --workspace "$HERDR_ACTIVE_WORKSPACE_ID" | jq -r '.result.tabs[3].tab_id')"
+[ -n "$tab_id" ] && "$HERDR_BIN_PATH" tab focus "$tab_id"
+'''
