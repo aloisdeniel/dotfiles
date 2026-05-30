@@ -10,7 +10,7 @@ brew update
 brew upgrade
 
 # Command line programs
-brew install tmux # Terminal session manager
+brew install herdr # Terminal session manager
 brew install fzf # Search
 brew install ripgrep 
 brew install git
@@ -18,7 +18,6 @@ brew install git-delta # Git prettier diff
 brew install gh # Github
 brew install lazygit # Git UI
 brew install neovim # Code editor
-brew install ollama # Local AI models
 brew install superfile # File manager
 
 #SDKs & Runtimes
@@ -36,7 +35,6 @@ curl -LsSf https://astral.sh/uv/install.sh | sh # Posting : Http client in the t
 
 brew install --cask zen-browser # Browser
 brew install --cask ghostty # Terminal
-brew install --cask raycast # Commands
 brew install --cask figma
 
 # Fonts
