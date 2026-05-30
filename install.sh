@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Install mise
+/bin/bash -c "$(curl curl https://mise.run | sh)"
+
 #Install Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 

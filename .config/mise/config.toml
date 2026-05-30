@@ -1,0 +1,19 @@
+[tools]
+fzf = "latest"
+git = "latest"
+gh = "latest"
+lazygit = "latest"
+neovim = "stable"
+ripgrep = "latest"
+superfile = "latest"
+
+node = "lts"
+
+go = "latest"
+
+flutter = "3.41.1"
+java = "21"
+android-sdk = "latest"
+
+
+rust = "latest"
