@@ -1,7 +1,7 @@
 [tools]
 fzf = "latest"
-git = "latest"
 gh = "latest"
+"github:ogulcancelik/herdr" = "latest"
 lazygit = "latest"
 neovim = "stable"
 ripgrep = "latest"

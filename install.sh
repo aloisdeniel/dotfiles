@@ -3,6 +3,8 @@
 # Install mise
 /bin/bash -c "$(curl curl https://mise.run | sh)"
 
+mise install
+
 #Install Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
@@ -12,30 +14,11 @@ brew update
 # Upgrade any already-installed formulae.
 brew upgrade
 
-# Command line programs
-brew install herdr # Terminal session manager
-brew install fzf # Search
-brew install ripgrep 
+#Tools, SDKs & Runtimes
 brew install git
-brew install git-delta # Git prettier diff
-brew install gh # Github
-brew install lazygit # Git UI
-brew install neovim # Code editor
-brew install superfile # File manager
-
-#SDKs & Runtimes
-brew install node
-brew install go
-brew install rustup
-brew install cocoapods # Required by Flutter iOS
-brew install --cask corretto # OpenJDK
 brew install --cask android-studio # Android SDK
-brew install --cask flutter
-
-curl -LsSf https://astral.sh/uv/install.sh | sh # Posting : Http client in the terminal
 
 # Programs
-
 brew install --cask zen-browser # Browser
 brew install --cask ghostty # Terminal
 brew install --cask figma
@@ -44,7 +27,9 @@ brew install --cask figma
 brew install --cask font-jetbrains-mono-nerd-font
 
 # Required by Flutter
-sudo softwareupdate --install-rosetta --agree-to-license
+sdkmanager "platforms;android-36"
+sdkmanager "build-tools;36.1.0"
+sdkmanager "platform-tools"
 
 # Git configuration
 git config --global pull.rebase false
