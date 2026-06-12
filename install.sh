@@ -35,6 +35,11 @@ sdkmanager "platform-tools"
 git config --global pull.rebase false
 git config --global user.email "alois.deniel@gmail.com"
 git config --global user.name "Aloïs DENIEL"
+git config --global core.pager delta
+git config --global interactive.diffFilter 'delta --color-only'
+git config --global delta.navigate true
+git config --global delta.dark true 
+git config --global merge.conflictStyle zdiff3
 
 # Remove outdated versions from the cellar.
 brew cleanup
