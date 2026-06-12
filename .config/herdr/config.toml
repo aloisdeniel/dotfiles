@@ -14,8 +14,8 @@ prefix = "ctrl+j"
 previous_workspace = "prefix+k"
 next_workspace = "prefix+j"
 
-focus_pane_down = "prefix+shift+k"
-focus_pane_up = "prefix+shift+j"
+focus_pane_down = "prefix+down"
+focus_pane_up = "prefix+up"
 settings = "prefix+shift+s"
 detach = "prefix+ctrl+q"
 workspace_picker = "prefix+ctrl+w"
@@ -23,6 +23,7 @@ edit_scrollback = "prefix+ctrl+e"
 resize_mode = "prefix+ctrl+r"
 
 [[keys.command]]
+description = "focus tab 1"
 key = "prefix+a"
 type = "shell"
 command = '''
@@ -31,6 +32,7 @@ tab_id="$("$HERDR_BIN_PATH" tab list --workspace "$HERDR_ACTIVE_WORKSPACE_ID" | 
 '''
 
 [[keys.command]]
+description = "focus tab 2"
 key = "prefix+s"
 type = "shell"
 command = '''
@@ -39,6 +41,7 @@ tab_id="$("$HERDR_BIN_PATH" tab list --workspace "$HERDR_ACTIVE_WORKSPACE_ID" | 
 '''
 
 [[keys.command]]
+description = "focus tab 3"
 key = "prefix+d"
 type = "shell"
 command = '''
@@ -47,6 +50,7 @@ tab_id="$("$HERDR_BIN_PATH" tab list --workspace "$HERDR_ACTIVE_WORKSPACE_ID" | 
 '''
 
 [[keys.command]]
+description = "focus tab 4"
 key = "prefix+f"
 type = "shell"
 command = '''
@@ -55,6 +59,7 @@ tab_id="$("$HERDR_BIN_PATH" tab list --workspace "$HERDR_ACTIVE_WORKSPACE_ID" | 
 '''
 
 [[keys.command]]
+description = "focus tab 5"
 key = "prefix+q"
 type = "shell"
 command = '''
@@ -63,6 +68,7 @@ tab_id="$("$HERDR_BIN_PATH" tab list --workspace "$HERDR_ACTIVE_WORKSPACE_ID" | 
 '''
 
 [[keys.command]]
+description = "focus tab 6"
 key = "prefix+w"
 type = "shell"
 command = '''
@@ -71,6 +77,7 @@ tab_id="$("$HERDR_BIN_PATH" tab list --workspace "$HERDR_ACTIVE_WORKSPACE_ID" | 
 '''
 
 [[keys.command]]
+description = "focus tab 7"
 key = "prefix+e"
 type = "shell"
 command = '''
@@ -79,9 +86,18 @@ tab_id="$("$HERDR_BIN_PATH" tab list --workspace "$HERDR_ACTIVE_WORKSPACE_ID" | 
 '''
 
 [[keys.command]]
+description = "focus tab 8"
 key = "prefix+r"
 type = "shell"
 command = '''
 tab_id="$("$HERDR_BIN_PATH" tab list --workspace "$HERDR_ACTIVE_WORKSPACE_ID" | jq -r '.result.tabs[7].tab_id')"
 [ -n "$tab_id" ] && "$HERDR_BIN_PATH" tab focus "$tab_id"
+'''
+
+[[keys.command]]
+description = "init dev tabs/panes"
+key = "prefix+shift+i"
+type = "shell"
+command = '''
+sh $HOME/.herdr/scripts/init-dev.sh
 '''
