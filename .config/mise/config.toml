@@ -6,6 +6,7 @@ lazygit = "latest"
 neovim = "stable"
 ripgrep = "latest"
 superfile = "latest"
+delta = "latest"
 
 node = "lts"
 
