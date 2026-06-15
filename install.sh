@@ -3,7 +3,6 @@
 # Install mise
 /bin/bash -c "$(curl curl https://mise.run | sh)"
 
-mise install
 
 #Install Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -16,12 +15,18 @@ brew upgrade
 
 #Tools, SDKs & Runtimes
 brew install git
+brew install gh
 brew install --cask android-studio # Android SDK
 
 # Programs
 brew install --cask zen-browser # Browser
 brew install --cask ghostty # Terminal
 brew install --cask figma
+
+# Mise
+gh auth login
+export MISE_GITHUB_TOKEN=$(gh auth token)
+mise install
 
 # Fonts
 brew install --cask font-jetbrains-mono-nerd-font
