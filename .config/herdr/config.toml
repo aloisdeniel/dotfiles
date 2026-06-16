@@ -99,5 +99,5 @@ description = "init dev tabs/panes"
 key = "prefix+shift+i"
 type = "shell"
 command = '''
-sh $HOME/.herdr/scripts/init-dev.sh
+sh $HOME/.config/herdr/scripts/init-dev.sh
 '''
