@@ -1,3 +1,4 @@
 git:
-  paging:
-    pager: delta --dark --paging=never --line-numbers
+  pagers:
+    - colorArg: always
+      pager: hunk pager
